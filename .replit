@@ -1,2 +1,2 @@
 language = "python3"
-run = "python 01.11/2.11/viz.py"
+run = "python 09.11/programma.py"
