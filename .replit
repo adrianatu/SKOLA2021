@@ -1,2 +1,2 @@
 language = "python3"
-run = "python uzdevumi.py"
+run = "python 07spele.py"
