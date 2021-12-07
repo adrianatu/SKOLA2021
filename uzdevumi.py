@@ -32,15 +32,15 @@ class Rekins():
 
   def izdruka(self):
  
-   print(f'Klienta vrds:{self.kliens}')
-   print(f'Klienta uzrakstItais veltIjums:{self.veltijums}')
-   print(f'Klienta ievadītais izmers:{self.izmers}')
-   print(f'Klienta ievadītais materiāls:{self.materials}')
+  #  print(f'Klienta vrds:{self.kliens}')
+  #  print(f'Klienta uzrakstItais veltIjums:{self.veltijums}')
+  #  print(f'Klienta ievadītais izmers:{self.izmers}')
+  #  print(f'Klienta ievadītais materiāls:{self.materials}')
    print("\n\n")
    print('\033[1m'+"Pasūtītāja dati:"+'\033[0m')
    print("-"*50)
-   print(f"\x1B[3mPasūtītāja vārds un uzvārds:\x1B[0m \033[1;32mklients\033[1;0m")
-   print(f"\x1B[3mVeltījuma teksts:\x1B[0m \033[1;32m{self.kliens}\033[1;0m")
+   print(f"\x1B[3mPasūtītāja vārds un uzvārds:\x1B[0m \033[1;32m{self.kliens}\033[1;0m")
+   print(f"\x1B[3mVeltījuma teksts:\x1B[0m \033[1;32m{self.veltijums}\033[1;0m")
    print(f"\x1B[3m Lādītes izmēri:\x1B[0m \033[1;32m{self.izmers}\033[1;0m")
    print(f"\x1B[3mGarums:\x1B[0m \033[1;32m{self.garums}\033[1;0m")
    print(f"\x1B[3mPlatums:\x1B[0m \033[1;32m{self.platums}\033[1;0m")
@@ -49,7 +49,8 @@ class Rekins():
    print(f"\x1B[3mIzmaksas:\x1B[0m \033[1;32m{self.aprekins()}\033[1;0m")
 
 
-  
+   self.saglabat()
+   print(f"klienta dati saglabāti failā{self.klients}.csv")
 
 
  
@@ -62,6 +63,14 @@ class Rekins():
 
      return rekina_summa
 
+
+  def saglabat(self):
+
+     import csv
+
+     with open(f"{self.klients}.cvs","w", newline = "") as file:
+       writer = csv.writer(file)
+       writer.writerow = (["Klienta vārds","Veltījums","Izmēri","Materiāla cena"])
 
 # kliens = input("Uzraksti savu vardu:")
 # veltijums = input("Uzraksti veltjumu:")
